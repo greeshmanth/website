@@ -1,0 +1,22 @@
+{% extends '/layout.html' %}
+
+{% block css %}
+	<link href="{{ static("css/post/styles.css") }}" rel="stylesheet">
+	<link href="{{ static("css/post/responsive.css") }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="post-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-1 col-md-0"></div>
+			<div class="col-lg-10 col-md-12">
+				<div class="main-post">
+					<h1 class="title"><b>{{ post.title }}</b></h1>						
+					{{ post.body | markdown }}
+				</div><!-- main-post -->
+			</div><!-- col-lg-8 col-md-12 -->
+		</div><!-- row -->
+	</div><!-- container -->
+</section><!-- post-area -->
+{% endblock %}

@@ -1,0 +1,27 @@
+.post-area { padding-bottom : 20px; }
+
+.main-post { margin-top: 20px; padding: 50px 0px 20px; box-shadow: 0px 0px 5px rgba(0,0,0,.1); 
+	border-bottom: 1px solid #eee; background: #fff; }
+
+.main-post .post-bottom-area{ margin: 0 70px; }
+
+.main-post .title{ padding: 0px 10% 30px 10%; }
+
+.main-post h2,
+.main-post h3, 
+.main-post h4, 
+.main-post ul,
+.main-post p { 
+	padding: 0px 10% 30px 10%;
+}
+
+.main-post li { list-style-type: inherit; display: list-item; list-style-position: inside; }
+
+.main-post ul.tags{ margin: 30px 0; }
+
+.main-post ul.tags > li > a{ padding: 7px 10px; margin-bottom: 10px; margin-right: 10px; float: left; 
+	border: 1px solid #ddd; background: #ddd; }
+
+.main-post ul.tags > li > a:hover{ background: none; }
+
+.main-post .wide { padding-left : 0px; padding-right : 0px; }

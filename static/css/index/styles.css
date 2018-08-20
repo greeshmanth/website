@@ -1,0 +1,56 @@
+
+/* ---------------------------------
+5. SINGLE POST
+--------------------------------- */
+
+.blog-area .row div[class^="col"] { margin-bottom: 30px; }
+
+.blog-area{ text-align: center; background: #EDF3F3; }
+
+.blog-area .single-post{ height: 100%; position: relative;
+	overflow: hidden; box-shadow: 0px 0px 5px rgba(0,0,0,.1); border: 1px solid #ddd; background: #fff; }
+
+.blog-area .single-post .title{ padding: 20px 30px 30px; }
+
+
+
+/* ---------------------------------
+6. NORMAL BLOG
+--------------------------------- */
+
+.post-style-1 .blog-image{ max-height: 200px; overflow: hidden; }
+
+
+
+/* ---------------------------------
+7. EXTRA BIG BLOG
+--------------------------------- */
+
+.blog-area .post-style-2{ padding-bottom: 0; text-align: left; }
+
+.blog-area .post-style-2 .title{ padding: 15px 0px 20px; }
+
+.post-style-2 .avatar-area{ padding: 25px 0 15px; position: relative; }
+
+.post-style-2 .avatar{ margin: 0px; }
+	
+.post-style-2 .avatar-area .right-area{ margin-left: 90px; position: absolute; top: 50%; transform: translateY(-50%); }
+
+.post-style-2 .blog-image{ width: 50%; float: left; height: 100%; }
+
+.post-style-2 .blog-image img{ height: 100%; width: 100%; }
+
+.post-style-2 .blog-info{ width: 50%; float: left; height: 100%; position: relative; padding: 30px; padding-bottom: 45px; }
+
+
+
+/* ---------------------------------
+8. EXTRA MEDIUM BLOG
+--------------------------------- */
+.post-style-2.post-style-3 .blog-info{ width: 100%; float: none; }
+
+/* ---------------------------------
+9. EXTRA SMALL BLOG
+--------------------------------- */
+.blog-area .post-style-4{ margin-bottom: 30px; }
+.display-table .display-table-cell.title{ padding: 30px; }

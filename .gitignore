@@ -1,0 +1,8 @@
+/__pycache__/
+bin/
+bona/
+lib/
+lib64
+pyvenv.cfg
+share
+

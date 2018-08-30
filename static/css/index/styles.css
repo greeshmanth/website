@@ -1,4 +1,6 @@
 
+a { display: inline; }
+
 /* ---------------------------------
 5. SINGLE POST
 --------------------------------- */
@@ -10,7 +12,7 @@
 .blog-area .single-post{ height: 100%; position: relative;
 	overflow: hidden; box-shadow: 0px 0px 5px rgba(0,0,0,.1); border: 1px solid #ddd; background: #fff; }
 
-.blog-area .single-post .title{ padding: 20px 30px 30px; }
+.blog-area .single-post .title{ padding: 20px 30px 20px; }
 
 
 
@@ -28,7 +30,7 @@
 
 .blog-area .post-style-2{ padding-bottom: 0; text-align: left; }
 
-.blog-area .post-style-2 .title{ padding: 15px 0px 20px; }
+.blog-area .post-style-2 .title{ padding: 20px 0px 20px; }
 
 .post-style-2 .avatar-area{ padding: 25px 0 15px; position: relative; }
 

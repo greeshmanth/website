@@ -9,7 +9,8 @@ Markdown(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    posts = cf.client.entries({ 'content_type': 'blogPost', 'order': 'sys.createdAt' })
+    return render_template("index.html",posts=posts)
     
 @app.route("/<path:path>/")
 def post(path):
@@ -26,7 +27,7 @@ def post(path):
         abort(404)
         
 @app.route("/admin/clear")
-def clear_urls(path):
+def clear_urls():
     
     cf.clear_post_urls()
     return "OK"

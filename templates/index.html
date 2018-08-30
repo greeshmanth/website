@@ -9,61 +9,60 @@
 <section class="blog-area section">
 	<div class="container">
 		<div class="row">
-			{% for i in range(3) %}
+			
+			{#
+			{% for post in posts %}
 			<div class="col-lg-4 col-md-6">
 				<div class="card h-100">
-					<a href="/a/">
+					<a href="{{ url_for(".post",path=post.url) }}">
 					<div class="single-post post-style-1">
-
-						<div class="blog-image"><img src="{{ static("images/marion-michele-330691.jpg") }}" alt="Blog Image"></div>
-
-						<div class="blog-info">
-							<h4 class="title"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-							Concepts in Physics?</b></h4>
-						</div><!-- blog-info -->
-					</div></a><!-- single-post -->
+						
+						<div class="blog-image"><img src="{{ post.title_image.url() }}?w=500&h=333" alt="{{ post.title }}"></div>
+						<h4 class="title display-table-cell"><b>{{ post.title }}</b></h4>
+						</div></a><!-- single-post -->
 				</div><!-- card -->
 			</div><!-- col-lg-4 col-md-6 -->
 			{% endfor %}
-
-			<div class="col-lg-8 col-md-12">
+			#}
+			{% for post in posts %}
+			<div class="col-lg-12 col-md-12">
+				<a href="{{ url_for(".post",path=post.url) }}">
 				<div class="card h-100">
+					
 					<div class="single-post post-style-2">
-
-						<div class="blog-image"><img src="{{ static("images/brooke-lark-194251.jpg") }}" alt="Blog Image"></div>
+					
+						<div class="blog-image"><img src="{{ post.title_image.url() }}?w=500&h=333&fit=fill" alt="{{ post.title }}"></div>
 
 						<div class="blog-info">
-
-							<h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-								Concepts in Physics?</b></a></h4>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+							<h2 class="title"><b>{{ post.title }}</b></h2>
+							<p class="body-large">{{ post.body | truncate(300) }}</p>
 						</div><!-- blog-right -->
-
+					
 					</div><!-- single-post extra-blog -->
 
-				</div><!-- card -->
+				</div>
+				</a><!-- card -->
 			</div><!-- col-lg-8 col-md-12 -->
-
+			
+			{#
 			<div class="col-lg-4 col-md-6">
 				<div class="card h-100">
 
 					<div class="single-post post-style-4">
 						<div class="display-table">
-							<h4 class="title display-table-cell"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-								Concepts in Physics?</b></a></h4>
+							<h4 class="title display-table-cell"><a href="#"><b>{{ post.title }}</b></a></h4>
 						</div>
 					</div><!-- single-post -->
 
 					<div class="single-post">
 						<div class="display-table">
-							<h4 class="title display-table-cell"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-								Concepts in Physics?</b></a></h4>
+							<h4 class="title display-table-cell"><a href="#"><b>{{ post.title }}</b></a></h4>
 						</div>
 					</div><!-- single-post -->
 				</div><!-- card -->
 			</div><!-- col-lg-4 col-md-6 -->
+			#}
+			{% endfor %}
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- section -->

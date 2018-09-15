@@ -4,11 +4,6 @@
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
 	h2{ font-size: 2.5em; }
-	
-	.post-style-2 .blog-info { padding-bottom: 20px; }
-	
-	.blog-area .post-style-2 .title { padding-top : 0px }
-	
 	body { font-size: 16px; }
 	
 }
@@ -28,19 +23,8 @@
 	body { font-size: 14px; }
 	
 	/* COMMoNS */
-	
 	.no-left-padding{ padding-left: 15px; }
-
 	.no-right-padding{ padding-right: 15px; }
-	
-	/* ---------------------------------
-	6. EXTRA BIG BLOG
-	--------------------------------- */
-	
-	.post-style-2 .blog-image{ width: 100%; height: auto; float: none; }
-	
-	.post-style-2 .blog-info{ height: auto; width: 100%; }
-	
 }
 
 

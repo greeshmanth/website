@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Greeshmanth Koganti</title>
+	<title>{{ (title + " - ") if title is defined }}Greeshmanth Koganti</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -14,19 +14,13 @@
 	<link href="{{ static("css/ionicons.css") }}" rel="stylesheet">
 	<link href="{{ static("css/common.css") }}" rel="stylesheet">
 	
-	<link rel="shortcut icon" type="image/png" href="/static/images/favicon.ico"/>
+	<link rel="shortcut icon" href="{{ static("img/favicon.ico") }}"/>
 	
 	{% block css %}{% endblock %}
 
 	
 </head>
-<body >
-	<header>
-		<div class="container-fluid position-relative no-side-padding">
-			<a href="{{ url_for(".index") }}" class="logo">Greeshmanth Koganti</a>
-		</div><!-- conatiner -->
-	</header>
-
+<body>
 	{% block content %}{% endblock %}
 
 	<footer>

@@ -1,4 +1,5 @@
 {% extends '/layout.html' %}
+{% set title = post.title %}
 
 {% block css %}
 	<link href="{{ static("css/post/styles.css") }}" rel="stylesheet">
@@ -6,13 +7,46 @@
 {% endblock %}
 
 {% block content %}
+<style>
+	.slider {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    background-size: cover;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+    
+  	background: url(https://images.ctfassets.net/9h3t1bvarz5p/3JR1ARnxBYAUkY2iso2gOg/1437acd3885500d013461fcd5e312582/IMG_3215.JPG) no-repeat center center fixed; 
+  	
+  	
+}
+</style>
+<div class="slider center-text">
+		<div class="container height-100">
+			<div class="row height-100">
+				<div class="col-lg-1 hidden-md-down"></div>
+				<div class="col-lg-10 col-md-12">
+					<div class="display-table">
+						<div class="display-table-cell">
+							<h1 class="title">{{ post.title | upper }}</h1>
+							<h3>{{ post.sub_title }}</h3>
+						</div><!-- display-table-cell -->
+					</div><!-- display-table -->
+
+				</div><!-- col-lg-10 -->
+			</div><!-- row -->
+		</div><!-- conatiner -->
+	</div><!-- slider -->
+
 <section class="post-area">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-1 col-md-0"></div>
 			<div class="col-lg-10 col-md-12">
 				<div class="main-post">
-					<h1 class="title"><b>{{ post.title }}</b></h1>						
 					{{ post.body | markdown }}
 				</div><!-- main-post -->
 			</div><!-- col-lg-8 col-md-12 -->

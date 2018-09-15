@@ -6,23 +6,39 @@
 {% endblock %}	
 
 {% block content %}
+<style>
+	h4 {
+		line-height: 1;
+	}
+	
+	.subtitle {
+		font-size: 0.75em;
+		display: block;
+	}
+</style>
+<header>
+	<div class="container-fluid position-relative no-side-padding">
+		<a href="{{ url_for(".index") }}" class="logo">Greeshmanth Koganti</a>
+	</div><!-- conatiner -->
+</header>
 <section class="blog-area section">
 	<div class="container">
 		<div class="row">
 			{% for post in posts %}
-			<div class="col-lg-12 col-md-6">
+			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 				<a href="{{ url_for(".post",path=post.url) }}">
-				<div class="card h-100">
-					<div class="single-post post-style-2">
-						<div class="blog-image"><img src="{{ post.title_image.url() }}?w=500&h=333&fit=fill" alt="{{ post.title }}"></div>
-						<div class="blog-info">
-							<h2 class="title">{{ post.title }}</h2>
-							<p class="body-large">{{ post.body | truncate(300) }}</p>
-						</div><!-- blog-right -->
-					</div><!-- single-post extra-blog -->
-				</div>
-				</a><!-- card -->
-			</div><!-- col-lg-8 col-md-12 -->
+					<div class="card h-100">
+						<div class="single-post post-style-1">
+							<div class="blog-image"><img src="{{ post.title_image.url() }}?w=500&h=333&fit=fill" alt="{{ post.title_image.title }}"></div>
+							<div class="blog-info">
+								<h4 class="title">{{ post.title | upper }}
+								<span class="subtitle">{{ post.sub_title }}</span>
+								</h4>
+							</div><!-- blog-info -->
+						</div><!-- single-post -->
+					</div><!-- card -->
+				</a>	
+			</div>
 			{% endfor %}
 		</div><!-- row -->
 	</div><!-- container -->

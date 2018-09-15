@@ -14,45 +14,7 @@ a { display: inline; }
 
 .blog-area .single-post .title{ padding: 20px 30px 20px; }
 
-
-
 /* ---------------------------------
 6. NORMAL BLOG
 --------------------------------- */
-
 .post-style-1 .blog-image{ max-height: 200px; overflow: hidden; }
-
-
-
-/* ---------------------------------
-7. EXTRA BIG BLOG
---------------------------------- */
-
-.blog-area .post-style-2{ padding-bottom: 0; text-align: left; }
-
-.blog-area .post-style-2 .title{ padding: 20px 0px 20px; font-weight: 500; }
-
-.post-style-2 .avatar-area{ padding: 25px 0 15px; position: relative; }
-
-.post-style-2 .avatar{ margin: 0px; }
-	
-.post-style-2 .avatar-area .right-area{ margin-left: 90px; position: absolute; top: 50%; transform: translateY(-50%); }
-
-.post-style-2 .blog-image{ width: 50%; float: left; height: 100%; }
-
-.post-style-2 .blog-image img{ height: 100%; width: 100%; }
-
-.post-style-2 .blog-info{ width: 50%; float: left; height: 100%; position: relative; padding: 30px; padding-bottom: 45px; }
-
-
-
-/* ---------------------------------
-8. EXTRA MEDIUM BLOG
---------------------------------- */
-.post-style-2.post-style-3 .blog-info{ width: 100%; float: none; }
-
-/* ---------------------------------
-9. EXTRA SMALL BLOG
---------------------------------- */
-.blog-area .post-style-4{ margin-bottom: 30px; }
-.display-table .display-table-cell.title{ padding: 30px; }

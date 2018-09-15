@@ -9,8 +9,12 @@ Markdown(app)
 
 @app.route("/")
 def index():
-    posts = cf.client.entries({ 'content_type': 'blogPost', 'order': 'sys.createdAt' })
+    posts = cf.client.entries({ 'content_type': 'blogPost', 'order': '-sys.createdAt' })
     return render_template("index.html",posts=posts)
+    
+@app.route("/test/")
+def index_grid():
+    return render_template("layout.grid.html")    
     
 @app.route("/<path:path>/")
 def post(path):

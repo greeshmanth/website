@@ -1,8 +1,15 @@
 
 
-/* Screens Resolution : 992px
+/* Screens Resolution : 1200px
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
+	h2{ font-size: 2.5em; }
+	
+	.post-style-2 .blog-info { padding-bottom: 20px; }
+	
+	.blog-area .post-style-2 .title { padding-top : 0px }
+	
+	body { font-size: 16px; }
 	
 }
 
@@ -14,9 +21,11 @@
 	1. PRIMARY STYLES
 	--------------------------------- */
 
-	h1{ font-size: 4em; }
-	h2{ font-size: 3em; }
-	h3{ font-size: 2em; }
+	h1{ font-size: 3em; }
+	h2{ font-size: 2em; }
+	h3{ font-size: 1.5em; }
+	
+	body { font-size: 14px; }
 	
 	/* COMMoNS */
 	

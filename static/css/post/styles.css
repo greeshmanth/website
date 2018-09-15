@@ -12,7 +12,7 @@
 .main-post h4, 
 .main-post ul,
 .main-post p { 
-	padding: 0px 10% 2em 10%;
+	padding: 0.5em 10% 0.5em 10%;
 }
 
 .main-post li { list-style-type: inherit; display: list-item; list-style-position: inside; }

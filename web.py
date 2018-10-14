@@ -26,7 +26,9 @@ def post(path):
             abort(404)
         else:  
             content = render_template("post.html",post=posts[0])    
-            return content.replace("<p><img",'<p class="wide"><img')
+            content =  content.replace("<p><img",'<p class="wide"><img')
+            content = content.replace('src="//images','src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" class="lazyload" data-src="//images')
+            return content
     else:
         abort(404)
         

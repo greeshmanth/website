@@ -1,13 +1,20 @@
 from flask import Flask, render_template, url_for, current_app, abort
 import cf
 from flaskext.markdown import Markdown
+from flask_caching import Cache
+
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 Markdown(app)
 
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+cache.init_app(app)
+
+
 @app.route("/")
+@cache.cached(timeout=60)
 def index():
     posts = cf.client.entries({ 'content_type': 'blogPost', 'order': '-sys.createdAt' })
     return render_template("index.html",posts=posts)
@@ -15,8 +22,9 @@ def index():
 @app.route("/test/")
 def index_grid():
     return render_template("layout.grid.html")    
-    
+
 @app.route("/<path:path>/")
+@cache.cached(timeout=60)
 def post(path):
     
     if path in cf.get_post_urls():

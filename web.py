@@ -14,7 +14,7 @@ cache.init_app(app)
 
 
 @app.route("/")
-@cache.cached(timeout=60)
+@cache.cached(timeout=60*60*24)
 def index():
     posts = cf.client.entries({ 'content_type': 'blogPost', 'order': '-sys.createdAt' })
     return render_template("index.html",posts=posts)
@@ -24,7 +24,7 @@ def index_grid():
     return render_template("layout.grid.html")    
 
 @app.route("/<path:path>/")
-@cache.cached(timeout=60)
+@cache.cached(timeout=60*60*24)
 def post(path):
     
     if path in cf.get_post_urls():

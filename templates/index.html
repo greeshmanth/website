@@ -1,46 +1,34 @@
 {% extends '/layout.html' %}
 
-{% block css %}
-	<link href="{{ static("css/index/styles.css") }}" rel="stylesheet">
-	<link href="{{ static("css/index/responsive.css") }}" rel="stylesheet">
-{% endblock %}	
-
 {% block content %}
-<style>
-	h4 {
-		line-height: 1;
-	}
-	
-	.subtitle {
-		font-size: 0.75em;
-		display: block;
-	}
-</style>
-<header>
-	<div class="container-fluid position-relative no-side-padding">
-		<a href="{{ url_for(".index") }}" class="logo">Greeshmanth Koganti</a>
-	</div><!-- conatiner -->
-</header>
+<div class="container">
+	<div class="row">
+		<div class="column column-80 column-offset-10">
+			<h1 style="text-align:center;margin-top:3rem"><strong>Greeshmanth Koganti</strong></h1>
+		</div>
+	</div><!-- row -->
+</div><!-- container -->
 <section class="blog-area section">
 	<div class="container">
-		<div class="row">
-			{% for post in posts %}
-			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+			{% for x in posts | batch(3) %}
+			<div class="row">
+			{% for post in x %}
+			<div class="column">
 				<a href="{{ url_for(".post",path=post.url) }}">
 					<div class="card h-100">
 						<div class="single-post post-style-1">
 							<div class="blog-image"><img src="{{ post.title_image.url() }}?w=500&h=333&fit=fill" alt="{{ post.title_image.title }}"></div>
 							<div class="blog-info">
-								<h4 class="title">{{ post.title | upper }}
+								<h4 class="title">{{ post.title | upper }}</h4>
 								<span class="subtitle">{{ post.sub_title }}</span>
-								</h4>
 							</div><!-- blog-info -->
 						</div><!-- single-post -->
 					</div><!-- card -->
 				</a>	
 			</div>
 			{% endfor %}
-		</div><!-- row -->
+			</div><!-- row -->
+			{% endfor %}
 	</div><!-- container -->
 </section><!-- section -->
 {% endblock %}

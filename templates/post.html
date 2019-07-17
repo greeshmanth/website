@@ -1,70 +1,45 @@
 {% extends '/layout.html' %}
 {% set title = post.title %}
 
-{% block css %}
-	<link href="{{ static("css/post/styles.css") }}" rel="stylesheet">
-	<link href="{{ static("css/post/responsive.css") }}" rel="stylesheet">
-{% endblock %}
-
 {% block content %}
 <style>
-	.slider {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    z-index: 0;
-    color: #fff;
-    background-size: cover;
-    -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-    
-  	background: url({{ post.header_image.url() }}?q=50) no-repeat center center fixed; 
-  	
-  	
+h1 {
+    font-size: 3.6rem;
 }
 
 #fixedbutton {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    width: 32px;
-    height: 32px;
+    position: fixed;
+    top: 0.8rem;
+    left: 0.8rem;
+    width: 3.2rem;
+    height: 3.2rem;
     opacity: .5;
 }
+
+/* Larger than mobile screen */
+@media (min-width: 40.0rem) { 
+	h1 {
+    	font-size: 4.6rem;
+	}
+	
+	#fixedbutton {
+	    top: 1.6rem;
+	    left: 1.6rem;
+	}
+}
+
 </style>
-<div class="slider center-text">
-		<div class="container height-100">
-			<div class="row height-100">
-				<div class="col-lg-1 hidden-md-down"></div>
-				<div class="col-lg-10 col-md-12">
-					<div class="display-table">
-						<div class="display-table-cell">
-							<h1 class="title">{{ post.title | upper }}</h1>
-							<h3>{{ post.sub_title }}</h3>
-						</div><!-- display-table-cell -->
-					</div><!-- display-table -->
-
-				</div><!-- col-lg-10 -->
-			</div><!-- row -->
-		</div><!-- conatiner -->
-	</div><!-- slider -->
-
-<section class="post-area">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-1 col-md-0"></div>
-			<div class="col-lg-10 col-md-12">
-				<div class="main-post">
-					{{ post.body | markdown }}
-				</div><!-- main-post -->
-			</div><!-- col-lg-8 col-md-12 -->
-		</div><!-- row -->
-	</div><!-- container -->
-</section><!-- post-area -->
-
+<div class="container">
+	<div class="row">
+		<div class="column column-80 column-offset-10">
+			<h1 style="text-align:center;margin-top:3rem"><strong>{{ post.title | upper }}</strong></h1>
+			<h4 style="text-align:center;">{{ post.sub_title | upper }}</h4>
+			<hr/>
+			{{ post.body | markdown }}
+		</div>
+	</div><!-- row -->
+</div><!-- container -->
 <a href="/"><img id = "fixedbutton" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNi41NTUsMjA4LjA2NEwyNjMuODU5LDMwLjM2N2MtNC42OC0zLjQyNi0xMS4wMzgtMy40MjYtMTUuNzE2LDBMNS40NDUsMjA4LjA2NCAgICBjLTUuOTI4LDQuMzQxLTcuMjE2LDEyLjY2NS0yLjg3NSwxOC41OTNzMTIuNjY2LDcuMjE0LDE4LjU5MywyLjg3NUwyNTYsNTcuNTg4bDIzNC44MzcsMTcxLjk0M2MyLjM2OCwxLjczNSw1LjEyLDIuNTcsNy44NDgsMi41NyAgICBjNC4wOTYsMCw4LjEzOC0xLjg4NSwxMC43NDQtNS40NDVDNTEzLjc3MSwyMjAuNzI5LDUxMi40ODMsMjEyLjQwNSw1MDYuNTU1LDIwOC4wNjR6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDQyLjI0NiwyMzIuNTQzYy03LjM0NiwwLTEzLjMwMyw1Ljk1Ni0xMy4zMDMsMTMuMzAzdjIxMS43NDlIMzIyLjUyMVYzNDIuMDA5YzAtMzYuNjgtMjkuODQyLTY2LjUyLTY2LjUyLTY2LjUyICAgIHMtNjYuNTIsMjkuODQyLTY2LjUyLDY2LjUydjExNS41ODdIODMuMDU4VjI0NS44NDdjMC03LjM0Ny01Ljk1Ny0xMy4zMDMtMTMuMzAzLTEzLjMwM3MtMTMuMzAzLDUuOTU2LTEzLjMwMywxMy4zMDN2MjI1LjA1MyAgICBjMCw3LjM0Nyw1Ljk1NywxMy4zMDMsMTMuMzAzLDEzLjMwM2gxMzMuMDI5YzYuOTk2LDAsMTIuNzIxLTUuNDA1LDEzLjI1MS0xMi4yNjdjMC4wMzItMC4zMTEsMC4wNTItMC42NTEsMC4wNTItMS4wMzZ2LTEyOC44OSAgICBjMC0yMi4wMDksMTcuOTA1LTM5LjkxNCwzOS45MTQtMzkuOTE0czM5LjkxNCwxNy45MDYsMzkuOTE0LDM5LjkxNHYxMjguODljMCwwLjM4MywwLjAyLDAuNzE3LDAuMDUyLDEuMDI0ICAgIGMwLjUyNCw2Ljg2Nyw2LjI1MSwxMi4yNzksMTMuMjUxLDEyLjI3OWgxMzMuMDI5YzcuMzQ3LDAsMTMuMzAzLTUuOTU2LDEzLjMwMy0xMy4zMDNWMjQ1Ljg0NyAgICBDNDU1LjU0OSwyMzguNDk5LDQ0OS41OTMsMjMyLjU0Myw0NDIuMjQ2LDIzMi41NDN6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /></a>
-
 {% endblock %}
 
 {% block js %}

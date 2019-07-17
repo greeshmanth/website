@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
 	<!-- Stylesheets -->
-	<link href="{{ static("css/bootstrap.css") }}" rel="stylesheet">
-	<link href="{{ static("css/ionicons.css") }}" rel="stylesheet">
-	<link href="{{ static("css/common.css") }}" rel="stylesheet">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 	
 	<link rel="shortcut icon" href="{{ static("img/favicon.ico") }}"/>
 	
@@ -23,20 +20,15 @@
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 col-md-12">
-					<div class="footer-section">
-						<p class="copyright">Copyright © 2019 Greeshmanth Koganti. All rights reserved.</p>
-					</div><!-- footer-section -->
-				</div><!-- col-lg-4 col-md-6 -->
+				<div class="column column-80 column-offset-10">
+					<hr/>
+					<p style="text-align:center;">Copyright © {{ now.year }} Greeshmanth Koganti. All rights reserved.</p>
+				</div>
 			</div><!-- row -->
 		</div><!-- container -->
 	</footer>
 
 	<!-- SCIPTS -->
-	<script src="{{ static("js/jquery-3.1.1.min.js") }}"></script>
-	<script src="{{ static("js/tether.min.js") }}"></script>
-	<script src="{{ static("js/bootstrap.js") }}"></script>
-	<script src="{{ static("js/scripts.js") }}"></script>
 	{% block js %}{% endblock %}
 </body>
 </html>

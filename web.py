@@ -19,7 +19,7 @@ def index():
     return render_template("index.html",posts=posts)
     
 @app.route("/<path:path>/")
-#@cache.cached(timeout=0)
+@cache.cached(timeout=0)
 def post(path):
     
     posts = cf.client.entries({ 'fields.url' : (path or request.path), 'content_type': 'blogPost', 'limit' : 1})

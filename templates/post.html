@@ -3,10 +3,6 @@
 
 {% block content %}
 <style>
-h1 {
-    font-size: 3.6rem;
-}
-
 #fixedbutton {
     position: fixed;
     top: 0.8rem;
@@ -14,6 +10,10 @@ h1 {
     width: 3.2rem;
     height: 3.2rem;
     opacity: .5;
+}
+
+h1 {
+    font-size: 3.6rem;
 }
 
 /* Larger than mobile screen */
@@ -27,12 +27,11 @@ h1 {
 	    left: 1.6rem;
 	}
 }
-
 </style>
 <div class="container">
 	<div class="row">
 		<div class="column column-80 column-offset-10">
-			<h1 style="text-align:center;margin-top:3rem"><strong>{{ post.title | upper }}</strong></h1>
+			<h1 style="text-align:center;margin-top:3rem;"><strong>{{ post.title | upper }}</strong></h1>
 			<h4 style="text-align:center;">{{ post.sub_title | upper }}</h4>
 			<hr/>
 			{{ post.body | markdown }}

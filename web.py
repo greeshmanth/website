@@ -13,7 +13,7 @@ cache = Cache(config={'CACHE_TYPE': 'simple'})
 cache.init_app(app)
 
 @app.route("/")
-#@cache.cached(timeout=0)
+@cache.cached(timeout=0)
 def index():
     posts = cf.client.entries({ 'content_type': 'blogPost', 'order': '-sys.createdAt' })
     return render_template("index.html",posts=posts)
@@ -30,6 +30,13 @@ def post(path):
         content = render_template("post.html",post=posts[0])    
         content = content.replace('src="//images','src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" class="lazyload" data-src="//images')
         return content
+        
+@app.route("/clear/")
+def claer_cache():
+    
+    cache.clear()
+    
+    return "OK"
 
 @app.context_processor
 def utility_processor():

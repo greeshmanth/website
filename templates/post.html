@@ -16,6 +16,10 @@ h1 {
     font-size: 3.6rem;
 }
 
+h1, h2, h3 {
+	color: orangered;
+}
+
 /* Larger than mobile screen */
 @media (min-width: 40.0rem) { 
 	h1 {
@@ -31,7 +35,7 @@ h1 {
 <div class="container">
 	<div class="row">
 		<div class="column column-80 column-offset-10">
-			<h1 style="text-align:center;margin-top:3rem;"><strong>{{ post.title | upper }}</strong></h1>
+			<h1 style="text-align:center;margin-top:3rem;">{{ post.title | upper }}</h1>
 			<h4 style="text-align:center;">{{ post.sub_title | upper }}</h4>
 			<hr/>
 			{{ post.body | markdown }}

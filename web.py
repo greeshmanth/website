@@ -28,7 +28,7 @@ def post(path):
         abort(404)
     else:  
         content = render_template("post.html",post=posts[0])    
-        content = content.replace('src="//images','src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" class="lazyload" data-src="//images')
+        content = content.replace('src="//images','src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="100%" class="lazyload" data-src="//images')
         return content
         
 @app.route("/clear/")
